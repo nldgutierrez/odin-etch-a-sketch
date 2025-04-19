@@ -1,0 +1,14 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    border: 1px dotted;
+}
+
+#grid div {
+    border: 1px solid;
+}
+
+#grid {
+    display: flex;
+    flex-wrap: wrap;
+}
