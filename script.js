@@ -3,7 +3,7 @@ const input = document.querySelector(".user-input")
 
 let size;
 
-const apply = document.querySelector("#apply");
+const applySize = document.querySelector("#apply-size");
 const gridSize = document.querySelector("#grid-size");
 
 const para = document.querySelector("#size-value");
@@ -15,8 +15,10 @@ gridSize.addEventListener("input", () => {
 
 const black = document.querySelector("#black");
 const color = document.querySelector("#color");
+const white = document.querySelector("#white");
+const applyMode = document.querySelector("#apply-mode");
 
-apply.addEventListener("click", createGrid);
+applySize.addEventListener("click", createGrid);
 
 function createGrid() {
     grid.innerHTML = '';
@@ -46,12 +48,40 @@ function createGrid() {
                     div.style.opacity = `${o += 0.1}`;
                 });
 
-            } else {
+            } else if (black.checked) {
                 div.addEventListener("mouseenter", () => {
                     div.style.backgroundColor = 'black';
                     div.style.opacity = `${o += 0.1}`;
                 });
+            } else {
+                div.addEventListener("mouseenter", () => {
+                    div.style.backgroundColor = '';
+                    div.style.opacity = '1';
+                });
             }
+
+            applyMode.addEventListener("click", mode)
+
+            function mode() {
+                if (color.checked) {
+                    div.addEventListener("mouseenter", () => {
+                        div.style.backgroundColor = randomColor;
+                        div.style.opacity = `${o += 0.1}`;
+                    });
+    
+                } else if (black.checked) {
+                    div.addEventListener("mouseenter", () => {
+                        div.style.backgroundColor = 'black';
+                        div.style.opacity = `${o += 0.1}`;
+                    });
+                } else {
+                    div.addEventListener("mouseenter", () => {
+                        div.style.backgroundColor = '';
+                        div.style.opacity = '1';
+                    });
+                }
+            }
+
 
 
             const reset = document.querySelector("#reset");
