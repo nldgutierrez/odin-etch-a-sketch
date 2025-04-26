@@ -7,7 +7,7 @@
     display: flex;
 }
 
-.row div {
+.square {
     border: 1px dotted;
     flex-grow: 1;
     aspect-ratio: 1/1;
@@ -16,8 +16,4 @@
 #grid {
     border: 1px dotted;
     width: 650px;
-}
-
-.sketch {
-    /* background-color: rgba(0, 0, 0, 1); */
 }

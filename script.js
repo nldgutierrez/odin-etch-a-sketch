@@ -38,8 +38,11 @@ function createGrid() {
             let b = Math.floor(Math.random()*250);
             let randomColor = `rgb(${r}, ${g}, ${b})`
     
+            let o = 0;
+
             div.addEventListener("mouseenter", () => {
                 div.style.backgroundColor = randomColor;
+                div.style.opacity = `${o += 0.1}`;
             });
         }
     }
@@ -60,8 +63,12 @@ for (let i = 0; i < 16; i++) {
         let b = Math.floor(Math.random()*250);
         let randomColor = `rgb(${r}, ${g}, ${b})`
 
+        let o = 0;
+
         div.addEventListener("mouseenter", () => {
             div.style.backgroundColor = randomColor;
+            div.style.opacity = `${o += 0.1}`;
         });
+        
     }
 }
