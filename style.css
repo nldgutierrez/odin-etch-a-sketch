@@ -16,3 +16,7 @@
 #grid {
     border: 1px dotted;
 }
+
+.sketch {
+    background-color: rgba(0, 0, 0, 1);
+}

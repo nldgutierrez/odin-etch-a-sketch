@@ -11,5 +11,9 @@ for (let i = 0; i < size; i++) {
     for (let i = 0; i < size; i++) {
         const div = document.createElement("div");
         row.appendChild(div);
+
+        div.addEventListener("mouseenter", ()=> {
+            div.setAttribute("class", "sketch");
+        });
     }
 }
