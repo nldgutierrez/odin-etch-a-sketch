@@ -1,6 +1,7 @@
 * {
     margin: 0;
     box-sizing: border-box;
+    /* border: 1px dotted; */
 }
 
 .row {
@@ -15,5 +16,18 @@
 
 #grid {
     border: 1px dotted;
-    width: 650px;
+    height: 100%;
+    flex-grow: 1;
+}
+
+.grid-container {
+    display: flex;
+    align-items: center;
+    max-height: 80vh;
+    aspect-ratio: 1/1;
+    overflow: auto;
+}
+
+.user-input {
+    border: 1px dotted;
 }
