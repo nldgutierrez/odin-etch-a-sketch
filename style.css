@@ -16,18 +16,12 @@
 
 #grid {
     border: 1px dotted;
-    height: 100%;
-    flex-grow: 1;
-}
-
-.grid-container {
-    display: flex;
-    align-items: center;
-    max-height: 80vh;
-    aspect-ratio: 1/1;
-    overflow: auto;
 }
 
 .user-input {
     border: 1px dotted;
+}
+
+.grid-container {
+    max-width: 600px;
 }

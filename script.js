@@ -3,7 +3,7 @@ const input = document.querySelector(".user-input")
 
 let size;
 
-const applySize = document.querySelector("#apply-size");
+const apply = document.querySelector("#apply");
 const gridSize = document.querySelector("#grid-size");
 
 const para = document.querySelector("#size-value");
@@ -13,7 +13,10 @@ gridSize.addEventListener("input", () => {
     para.textContent = `Size: ${gridSize.value} x ${gridSize.value}`;
 })
 
-applySize.addEventListener("click", createGrid);
+const black = document.querySelector("#black");
+const color = document.querySelector("#color");
+
+apply.addEventListener("click", createGrid);
 
 function createGrid() {
     grid.innerHTML = '';
@@ -37,10 +40,19 @@ function createGrid() {
     
             let o = 0;
 
-            div.addEventListener("mouseenter", () => {
-                div.style.backgroundColor = randomColor;
-                div.style.opacity = `${o += 0.1}`;
-            });
+            if (color.checked) {
+                div.addEventListener("mouseenter", () => {
+                    div.style.backgroundColor = randomColor;
+                    div.style.opacity = `${o += 0.1}`;
+                });
+
+            } else {
+                div.addEventListener("mouseenter", () => {
+                    div.style.backgroundColor = 'black';
+                    div.style.opacity = `${o += 0.1}`;
+                });
+            }
+
 
             const reset = document.querySelector("#reset");
 
@@ -63,15 +75,9 @@ for (let i = 0; i < 16; i++) {
         div.setAttribute("class", "square");
         row.appendChild(div);
 
-        let r = Math.floor(Math.random()*250);
-        let g = Math.floor(Math.random()*250);
-        let b = Math.floor(Math.random()*250);
-        let randomColor = `rgb(${r}, ${g}, ${b})`;
-
         let o = 0;
-
         div.addEventListener("mouseenter", () => {
-            div.style.backgroundColor = randomColor;
+            div.style.backgroundColor = 'black';
             div.style.opacity = `${o += 0.1}`;
         });
 
@@ -84,4 +90,4 @@ for (let i = 0; i < 16; i++) {
         }
 
     }
-}
+} 

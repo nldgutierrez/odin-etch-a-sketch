@@ -16,9 +16,15 @@
             <label for="gridsize">Choose the size of grid:</label>
             <input type="range" name="gridsize" id="grid-size" min="1" max="100" value="16" step="1">
             <p id="size-value"></p>
-            <button id="apply-size">Apply</button>
         </fieldset>
-
+        <fieldset>
+            <legend>Mode</legend>
+            <input type="radio" name="mode" id="black" value="black" checked>
+            <label for="black">Black</label><br>
+            <input type="radio" name="mode" id="color" value="color">
+            <label for="color">Rainbow</label>
+        </fieldset>
+        <button id="apply">Apply</button>
         <button id="reset">Reset</button>
     </div>
     <div class="grid-container">
