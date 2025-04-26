@@ -31,12 +31,13 @@ function createGrid() {
     
         for (let i = 0; i < size; i++) {
             const div = document.createElement("div");
+            div.setAttribute("class", "square");
             row.appendChild(div);
 
             let r = Math.floor(Math.random()*250);
             let g = Math.floor(Math.random()*250);
             let b = Math.floor(Math.random()*250);
-            let randomColor = `rgb(${r}, ${g}, ${b})`
+            let randomColor = `rgb(${r}, ${g}, ${b})`;
     
             let o = 0;
 
@@ -61,7 +62,7 @@ for (let i = 0; i < 16; i++) {
         let r = Math.floor(Math.random()*250);
         let g = Math.floor(Math.random()*250);
         let b = Math.floor(Math.random()*250);
-        let randomColor = `rgb(${r}, ${g}, ${b})`
+        let randomColor = `rgb(${r}, ${g}, ${b})`;
 
         let o = 0;
 
