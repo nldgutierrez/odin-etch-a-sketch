@@ -32,9 +32,14 @@ function createGrid() {
         for (let i = 0; i < size; i++) {
             const div = document.createElement("div");
             row.appendChild(div);
+
+            let r = Math.floor(Math.random()*250);
+            let g = Math.floor(Math.random()*250);
+            let b = Math.floor(Math.random()*250);
+            let randomColor = `rgb(${r}, ${g}, ${b})`
     
-            div.addEventListener("mouseenter", ()=> {
-                div.setAttribute("class", "sketch");
+            div.addEventListener("mouseenter", () => {
+                div.style.backgroundColor = randomColor;
             });
         }
     }
@@ -47,10 +52,16 @@ for (let i = 0; i < 16; i++) {
 
     for (let i = 0; i < 16; i++) {
         const div = document.createElement("div");
+        div.setAttribute("class", "square");
         row.appendChild(div);
 
-        div.addEventListener("mouseenter", ()=> {
-            div.setAttribute("class", "sketch");
+        let r = Math.floor(Math.random()*250);
+        let g = Math.floor(Math.random()*250);
+        let b = Math.floor(Math.random()*250);
+        let randomColor = `rgb(${r}, ${g}, ${b})`
+
+        div.addEventListener("mouseenter", () => {
+            div.style.backgroundColor = randomColor;
         });
     }
 }
