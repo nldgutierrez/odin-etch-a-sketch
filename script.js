@@ -7,10 +7,10 @@ const applySize = document.querySelector("#apply-size");
 const gridSize = document.querySelector("#grid-size");
 
 const para = document.querySelector("#size-value");
-para.textContent = `Size: 16 x 16`;
+para.textContent = `Grid Size: 16 x 16`;
 
 gridSize.addEventListener("input", () => {
-    para.textContent = `Size: ${gridSize.value} x ${gridSize.value}`;
+    para.textContent = `Grid Size: ${gridSize.value} x ${gridSize.value}`;
 })
 
 const black = document.querySelector("#black");

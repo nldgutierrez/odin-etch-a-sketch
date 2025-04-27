@@ -8,30 +8,47 @@
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
 </head>
 <body>
-    <div class="user-input">
-        <fieldset>
-            <legend>Grid</legend>
-            <label for="gridsize">Choose the size of grid:</label>
-            <input type="range" name="gridsize" id="grid-size" min="1" max="100" value="16" step="1">
-            <p id="size-value"></p>
-            <button id="apply-size">Apply</button>
-        </fieldset>
-        <fieldset>
-            <legend>Mode</legend>
-            <input type="radio" name="mode" id="black" value="black" checked>
-            <label for="black">Black</label>
-            <input type="radio" name="mode" id="color" value="color">
-            <label for="color">Rainbow</label>
-            <input type="radio" name="mode" id="color" value="eraser">
-            <label for="eraser">Eraser</label>
-            <button id="apply-mode">Apply</button>
-        </fieldset>
-        <button id="reset">Reset</button>
-    </div>
-    <div class="grid-container">
-        <div id="grid"></div>
+    <div class="main">
+        <div class="user-input">
+            <h1>Etch-a-Sketch</h1>
+            <fieldset>
+                <legend>Grid</legend>
+                <div class="grid-settings">
+                    <label for="gridsize"></label>
+                    <input class="slider" type="range" name="gridsize" id="grid-size" min="1" max="100" value="16" step="1">
+                    <p id="size-value"></p>
+                    <button id="apply-size">Apply</button>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Mode</legend>
+                <div class="radios">
+                    <div class="radio black">
+                        <input type="radio" name="mode" id="black" value="black" checked>
+                        <label for="black">Black</label>
+                    </div>
+                    <div class="radio color">
+                        <input type="radio" name="mode" id="color" value="color">
+                        <label for="color">Random Color</label>
+                    </div>
+                    <div class="radio eraser">
+                        <input type="radio" name="mode" id="color" value="eraser">
+                        <label for="eraser">Eraser</label>
+                    </div>
+                        <button id="apply-mode">Apply</button>
+                </div>
+            </fieldset>
+            <button id="reset">Reset</button>
+        </div>
+        <div class="grid-container">
+            <div id="grid"></div>
+        </div>
     </div>
 </body>
 </html>
