@@ -60,7 +60,7 @@ function createGrid() {
                 });
             }
 
-            applyMode.addEventListener("click", mode)
+            applyMode.addEventListener("click", mode);
 
             function mode() {
                 if (color.checked) {
@@ -90,6 +90,7 @@ function createGrid() {
             function resetGrid() {
                 div.style.backgroundColor = '';
                 div.style.opacity = '1';
+                o = 0;
             }
         }
     }
@@ -105,11 +106,53 @@ for (let i = 0; i < 16; i++) {
         div.setAttribute("class", "square");
         row.appendChild(div);
 
+        let r = Math.floor(Math.random()*250);
+        let g = Math.floor(Math.random()*250);
+        let b = Math.floor(Math.random()*250);
+        let randomColor = `rgb(${r}, ${g}, ${b})`;
         let o = 0;
-        div.addEventListener("mouseenter", () => {
-            div.style.backgroundColor = 'black';
-            div.style.opacity = `${o += 0.1}`;
-        });
+
+
+        if (color.checked) {
+            div.addEventListener("mouseenter", () => {
+                div.style.backgroundColor = randomColor;
+                div.style.opacity = `${o += 0.1}`;
+            });
+
+        } else if (black.checked) {
+            div.addEventListener("mouseenter", () => {
+                div.style.backgroundColor = 'black';
+                div.style.opacity = `${o += 0.1}`;
+            });
+        } else {
+            div.addEventListener("mouseenter", () => {
+                div.style.backgroundColor = '';
+                div.style.opacity = '1';
+            });
+        }
+
+        applyMode.addEventListener("click", mode);
+        function mode() {
+            if (color.checked) {
+                div.addEventListener("mouseenter", () => {
+                    div.style.backgroundColor = randomColor;
+                    div.style.opacity = `${o += 0.1}`;
+                });
+
+            } else if (black.checked) {
+                div.addEventListener("mouseenter", () => {
+                    div.style.backgroundColor = 'black';
+                    div.style.opacity = `${o += 0.1}`;
+                });
+            } else {
+                div.addEventListener("mouseenter", () => {
+                    div.style.backgroundColor = '';
+                    div.style.opacity = '1';
+                });
+            }
+        }
+
+        
 
         const reset = document.querySelector("#reset");
 
@@ -117,6 +160,7 @@ for (let i = 0; i < 16; i++) {
         function resetGrid() {
             div.style.backgroundColor = '';
             div.style.opacity = '1';
+            o = 0;
         }
 
     }
